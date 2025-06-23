@@ -10,15 +10,15 @@ type Props = {
 
 const CardData = ({ data, setTableData }: Props) => {
   const handleAdd = () => {
-    setTableData((prev) => prev + 1);
+    setTableData((prev) => (prev < 9 ? prev + 1 : 0));
   };
 
   return (
-    <div className="w-full relative h-[60svh] overflow-y-auto pt-5 rounded-2xl shadow-2xl">
+    <div className="w-full relative h-[70svh] overflow-y-auto pt-5 rounded-2xl shadow-2xl">
       {data.map((item: WeekData, index: number) => {
         const weeks = Object.entries(item)
           .filter(([key]) => key.startsWith("W"))
-          .map(([_, value]) => value);
+          .map(([value]) => value);
 
         return (
           <div className="p-5" key={index + item.W1}>

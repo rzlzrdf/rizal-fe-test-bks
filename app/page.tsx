@@ -2,9 +2,9 @@
 
 import { useEffect, useState } from "react";
 import CardData from "./components/CardData";
-import Table from "./components/table";
 import axios from "axios";
 import { LoaderIcon } from "lucide-react";
+import Table from "./components/table";
 
 export interface WeekData {
   branch: string;
@@ -43,9 +43,9 @@ export default function Home() {
   }, []);
 
   return (
-    <main className="min-h-[90vh] w-full grid grid-cols-12 gap-10 px-5 lg:px-[5vw] py-3">
+    <main className="min-h-[90vh] w-full grid grid-cols-12 gap-10 px-5 lg:px-[5vw] place-content-center py-3">
       <div className="col-span-8" id="table">
-        <div className="p-5 shadow-2xl rounded-2xl h-[70svh]">
+        <div className="p-5 shadow-2xl rounded-2xl h-[75svh]">
           <p className="py-5 text-xl">Table View</p>
           <Table data={data} tableData={tableData} />
         </div>
