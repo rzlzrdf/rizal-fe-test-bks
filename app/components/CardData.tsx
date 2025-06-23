@@ -17,17 +17,17 @@ const CardData = ({ data, setTableData }: Props) => {
     <div className="w-full relative h-[70svh] overflow-y-auto pt-5 rounded-2xl shadow-2xl">
       {data.map((item: WeekData, index: number) => {
         const weeks = Object.entries(item)
-          .filter(([key]) => key.startsWith("W"))
-          .map(([value]) => value);
+          .filter(([key, _]) => key.startsWith("W"))
+          .map(([_, value]) => value);
 
         return (
           <div className="p-5" key={index + item.W1}>
             {weeks.map((weekItem: string | number, key: React.Key) => {
-              const box = typeof weekItem === "number" ? weekItem : 0;
+              const box = typeof weekItem == "number" ? weekItem : 0;
               return (
                 <div className={"flex justify-between items-center"} key={key}>
                   <div className="flex items-center gap-5">
-                    <p>W{index + 1}</p>
+                    <p>{weekItem}</p>
                     {item.branch}
                   </div>
                   <div className="text-bottom">{Math.floor(box)} Box</div>
