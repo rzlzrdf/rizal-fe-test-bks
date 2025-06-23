@@ -20,6 +20,8 @@ const CardData = ({ data, setTableData }: Props) => {
           .filter(([key]) => key.startsWith("W"))
           .map(([_, value]) => value);
 
+        
+
         return (
           <div className="p-5" key={index + item.W1}>
             {weeks.map((weekItem: string | number, num: number) => {
